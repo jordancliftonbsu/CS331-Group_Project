@@ -8,14 +8,14 @@ public class SuperSecureMessenger {
             UIActions actions = new UIActions(ui);
 
             ui.clearButton.addActionListener(e -> actions.clearAll());
-            connectAliceToBob(ui, actions);
+            aliceSend(ui, actions);
 
             ui.setVisible(true);
         });
     }
 
     /** Makes Alice's Send button deliver her typed message to Bob's receiver box. */
-    private static void connectAliceToBob(UI ui, UIActions actions) {
+    private static void aliceSend(UI ui, UIActions actions) {
         ui.aliceSend.addActionListener(e -> {
             String message = actions.takeAliceMessage();
             if (!message.isBlank()) {
